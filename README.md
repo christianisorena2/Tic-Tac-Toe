@@ -1,1 +1,1 @@
-# Tic-Tac-Toe
+# Tic-tac-toe-5x6

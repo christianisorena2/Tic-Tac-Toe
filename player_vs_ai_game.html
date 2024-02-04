@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="player_vs_ai_styles.css">
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 50px; /* Added margin to the bottom */
+        }
+
+        h1 {
+            margin-bottom: 20px; /* Added margin below the heading */
+        }
+
+        #gameContainer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px; /* Added margin below the game container */
+        }
+
+        #scoreboard {
+            margin-bottom: 10px; /* Added margin below the scoreboard */
+            text-align: right;
+            font-size: 20px;
+            position: absolute;
+            top: 250px; /* Adjust the top distance as needed */
+            right: 200px; /* Adjust the right distance as needed */
+        }
+
+        .modal-content1 button {
+            background-color: #ff0000;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        .modal-content1 button:hover {
+            background-color: #ff5900;
+            color: white;
+        }
+
+        /* Style for the restart button */
+        #restartButton {
+            background-color: #000000;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+
+        #restartButton:hover {
+            background-color: #5a5a5a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tic Tac Toe - Player vs Computer</h1>
+        <div id="gameContainer">
+            <table id="ticTacToe"></table>
+        </div>
+        <!-- Restart game button -->
+        <button id="restartButton" onclick="restartGame()">Restart Game</button>
+    </div>
+     <div id="scoreboard">
+            <div>Player X Score: <span id="scoreX">0</span></div>
+            <div>Player O Score: <span id="scoreO">0</span></div>
+            <div id="turnLabel">Turn: Player X</div>
+    </div>
+
+    <div id="customModal" class="modal1">
+      <div class="modal-content">
+        <span class="close" onclick="closeCustomModal()">&times;</span>
+        <p id="modalMessage"></p>
+      </div>
+    </div>
+
+    <!-- Modal for AI level selection -->
+    <div id="modal" class="modal">
+        <div class="modal-content1">
+            <!-- <span class="close" onclick="closeModal()">&times;</span> -->
+            <p>Choose AI difficulty:</p>
+            <button onclick="selectAIDifficulty('easy')" style="background-color: #3C486B;">Easy</button>
+            <button onclick="selectAIDifficulty('difficult')" style="background-color: #3C486B;">Difficult</button>
+            <button onclick="selectAIDifficulty('expert')" style="background-color: #3C486B;">Expert</button>
+        </div>
+    </div>
+    <script src="player_vs_ai.js"></script>
+    <script>
+        function restartGame() {
+            location.reload(); // Reload the current page
+        }
+    </script>
+</body>
+</html>
